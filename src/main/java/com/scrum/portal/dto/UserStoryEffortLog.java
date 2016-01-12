@@ -1,0 +1,90 @@
+package com.scrum.portal.dto;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+
+/**
+ * employee Id common for tester an developer
+ * @author vasanthbabu
+ *
+ */	
+
+@Entity
+@Table(name="USERSTORY_EFFORT_LOG")
+public class UserStoryEffortLog 
+{
+	
+	
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private int id;
+	
+	private int employeeID;
+	private int userStory_Id;
+	
+	@Column(nullable=true)
+	private int actualEffort_Dev;
+	@Column(nullable=true)
+	private int actualEffort_Test;
+	
+	private int day;
+	
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public int getEmployeeID() {
+		return employeeID;
+	}
+	public void setEmployeeID(int employeeID) {
+		this.employeeID = employeeID;
+	}
+	public int getUserStory_Id() {
+		return userStory_Id;
+	}
+	public void setUserStory_Id(int userStory_Id) {
+		this.userStory_Id = userStory_Id;
+	}
+	public int getActualEffort_Dev() {
+		return actualEffort_Dev;
+	}
+	public void setActualEffort_Dev(int actualEffort_Dev) {
+		this.actualEffort_Dev = actualEffort_Dev;
+	}
+	public int getActualEffort_Test() {
+		return actualEffort_Test;
+	}
+	public void setActualEffort_Test(int actualEffort_Test) {
+		this.actualEffort_Test = actualEffort_Test;
+	}
+	public int getDay() {
+		return day;
+	}
+	public void setDay(int day) {
+		this.day = day;
+	}
+	public UserStoryEffortLog(int employeeID, int userStory_Id, int actualEffort_Dev, int actualEffort_Test, int day) {
+		super();
+		this.employeeID = employeeID;
+		this.userStory_Id = userStory_Id;
+		this.actualEffort_Dev = actualEffort_Dev;
+		this.actualEffort_Test = actualEffort_Test;
+		this.day = day;
+	}
+	
+	public UserStoryEffortLog()
+	{
+		
+	}
+	
+	
+	
+
+}
